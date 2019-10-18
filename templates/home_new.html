@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block navbarLeftBtn %}
+    <a class="back-btn" href="javascript:history.back()"><button>Cancel</button></a>
+{% endblock %}
+
+{% block content %}
+<form method='POST' action='/homes' style="text-align: center; padding-top: 40px;">
+    <fieldset>
+    <legend>Buy/Sell New Homes</legend>
+
+    <p>
+        <label for='title'>Search Home/Address:</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+            <label for='image'> Image URL:</label><br>
+            <input type='text' name='image' />
+    </p>
+    <p>
+        <label for='price'>Price</label><br>
+        <input type='text' name='price' />
+    </p>
+    </fieldset>
+    <p>
+        <button type='submit'>Post</button>
+    </p>
+</form>
+{% endblock %}

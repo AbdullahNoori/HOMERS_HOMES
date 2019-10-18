@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block navbarLeftBtn %}
+    <a class="back-btn" href="/"><button>⬅ Back</button></a>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/home_show.css">
+    <div class="card">
+            <img width='300' height='280' src="{{ home.image }}">
+            <h1>{{ home.title }}</h1>
+            <p class="price">{{ home.price }}</p>
+
+            
+        <div class="options-container">
+                <p class="edit">
+                        <a href='/homes/{{ home._id }}/edit'>
+                            <button>Edit</button>
+                        </a>
+                </p>
+        
+                <form  method='POST' action='/home/{{ home._id }}/delete'>
+                    <button type='submit' class="delete">Delete</button>
+                </form>
+        </div>
+            
+  
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block navbarLeftBtn %}
+    <a class="back-btn" href="javascript:history.back()"><button>Cancel </button></a>
+{% endblock %}
+
+{% block content %}
+<form method='POST' action='/homes/{{home._id}}'  style="text-align: center; padding-top: 40px;">
+    <fieldset>
+
+    <legend>Update homes</legend>
+    <p>
+        <label for='title'>Update Home Title:</label><br>
+        <input type='text' name='title' value='{{home.title}}'/>
+    </p>
+    <p>
+            <label for='image'>Update Home Image URL:</label><br>
+            <input type='text' name='image' value='{{home.image}}'/>
+    </p>
+    <p>
+        <label for='price'>Update Price:</label><br>
+        <input type='text' name='price' value='{{home.price}}'/>
+    </p>
+    
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Update</button>
+    </p>
+</form>
+{% endblock %}

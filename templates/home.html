@@ -1,0 +1,27 @@
+<!-- <h1>Create</h1> -->
+{% extends "base.html" %}
+
+{% block navbarRightBtn %}
+    <a href='/homes/new' class='add-btn'><button>New Home</button></a>
+{% endblock navbarRightBtn %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/home.css">
+<br>
+<div class="flex-container">
+    {% for home in homes %}
+    <div>
+            <a  style="text-decoration: fantasy;" href="/homes/{{ home._id }}">
+        <img style="width: 200px; height: 200px; margin-top: 30px;" class="card-img-top" src="{{ home.image }}" alt="Card image cap">
+     <div>
+            <p class="des">{{ home.title }}</p>
+            <p class="des">{{ home.price }}</p>
+     </div>
+    </a>
+    </div>
+
+{% endfor %}
+
+</div>
+{% endblock %}

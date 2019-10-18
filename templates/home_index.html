@@ -1,0 +1,12 @@
+<!-- <h1>Create</h1> -->
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>Homes for Sale</h1>
+<a href="/homes/new">New homes</a>
+    {% for home in homes %}
+        <h2>{{ home.title }}</h2>
+        <small>{{ home.description }}</small>
+    {% endfor %}
+{% endblock %}
